@@ -11,6 +11,14 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Intro counter (inspired by editorial loaders) -->
+  <div class="loader" id="loader">
+    <div class="loader__row">
+      <span class="loader__label">NAIFU &mdash; ナイフ</span>
+      <span class="loader__count" id="loaderCount">000</span>
+    </div>
+  </div>
+
   <!-- Navigation -->
   <header class="nav" id="nav">
     <a href="#hero" class="nav__brand">
@@ -18,11 +26,11 @@
       <span class="nav__name">NAIFU</span>
     </a>
     <nav class="nav__links">
-      <a href="#about">About</a>
-      <a href="#journey">Journey</a>
-      <a href="#craft">The Craft</a>
-      <a href="#content">TikTok</a>
-      <a href="#contact">Contact</a>
+      <a href="#about">About<sup>01</sup></a>
+      <a href="#journey">Journey<sup>02</sup></a>
+      <a href="#craft">The Craft<sup>03</sup></a>
+      <a href="#content">TikTok<sup>04</sup></a>
+      <a href="#contact">Contact<sup>05</sup></a>
     </nav>
     <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -32,24 +40,32 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__content">
-      <p class="hero__eyebrow" data-reveal>Knife Sharpener &middot; Content Creator</p>
-      <h1 class="hero__title" data-reveal>
-        <span class="hero__kanji">ナイフ</span>
-        NAIFU
-      </h1>
-      <p class="hero__subtitle" data-reveal>
-        The knife sharpening journey of <strong>Phong Vuoc Tran</strong> —
-        restoring forgotten blades to a mirror edge, one video at a time.
-      </p>
-      <div class="hero__cta" data-reveal>
-        <a href="#journey" class="btn btn--primary">My Journey</a>
-        <a href="#content" class="btn btn--ghost">Watch on TikTok</a>
+    <div class="hero__grid">
+      <div class="hero__content">
+        <p class="hero__eyebrow" data-reveal>Knife Sharpener &middot; Content Creator</p>
+        <h1 class="hero__title" data-reveal>
+          <span class="hero__kanji">ナイフ</span>
+          NAIFU
+        </h1>
+        <p class="hero__subtitle" data-reveal>
+          Hi, I'm <strong>Phong Vuoc Tran</strong>. I bring forgotten, rusted blades
+          back to a mirror edge — and share every spark of it with you on TikTok.
+        </p>
+        <div class="hero__cta" data-reveal>
+          <a href="#journey" class="btn btn--primary">My Journey</a>
+          <a href="#content" class="btn btn--ghost">Watch on TikTok</a>
+        </div>
+        <div class="hero__stats" data-reveal>
+          <div class="stat"><span class="stat__num" data-count="10000">0</span><span class="stat__label">Blades Restored</span></div>
+          <div class="stat"><span class="stat__num" data-count="1000">0</span><span class="stat__label">Satisfied Customers</span></div>
+          <div class="stat"><span class="stat__num" data-count="7">0</span><span class="stat__label">Years of Experience</span></div>
+        </div>
       </div>
-      <div class="hero__stats" data-reveal>
-        <div class="stat"><span class="stat__num" data-count="500">0</span><span class="stat__label">Blades Restored</span></div>
-        <div class="stat"><span class="stat__num" data-count="1000">0</span><span class="stat__label">Grit &amp; Beyond</span></div>
-        <div class="stat"><span class="stat__num" data-count="100">0</span><span class="stat__label">% Sharp</span></div>
+      <div class="hero__portrait" data-reveal>
+        <img src="image/photo.JPG" alt="Phong Vuoc Tran — NAIFU"
+          onerror="this.style.display='none';this.parentElement.classList.add('hero__portrait--empty')" />
+        <span class="hero__portrait-kanji">研</span>
+        <span class="hero__portrait-tag">Phong &middot; ナイフ</span>
       </div>
     </div>
     <a href="#about" class="hero__scroll" aria-label="Scroll down">
@@ -57,32 +73,40 @@
     </a>
   </section>
 
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>研 &middot; 砥 &middot; 鏡 &middot; 刀 &middot; <em>NAIFU ナイフ</em> &middot; KNIFE SHARPENING &middot;&nbsp;</span>
+      <span>研 &middot; 砥 &middot; 鏡 &middot; 刀 &middot; <em>NAIFU ナイフ</em> &middot; KNIFE SHARPENING &middot;&nbsp;</span>
+    </div>
+  </div>
+
   <!-- About -->
   <section class="section about" id="about">
     <div class="section__inner">
       <div class="about__grid">
-        <div class="about__media" data-reveal>
-          <div class="about__photo">
-            <img src="photo.jpg" alt="Phong Vuoc Tran — NAIFU" class="about__img"
-              onerror="this.style.display='none';this.parentElement.classList.add('about__photo--empty')" />
-            <span class="about__photo-kanji">研</span>
-            <p class="about__photo-hint">Drop a file named photo.jpg here</p>
-          </div>
-        </div>
+        <aside class="about__card" data-reveal>
+          <p class="about__quote">“Every knife tells a story. My job is to listen to it through the steel.”</p>
+          <p class="about__sign">— Phong, <span>NAIFU ナイフ</span></p>
+          <ul class="about__facts">
+            <li><span>Alias</span> NAIFU ナイフ</li>
+            <li><span>Craft</span> Sharpening &amp; restoration</li>
+            <li><span>Sharpening since</span> 2019</li>
+            <li><span>Find me</span> TikTok @knifesharpening</li>
+          </ul>
+        </aside>
         <div class="about__text">
           <p class="section__eyebrow" data-reveal>研ぐ &middot; To Sharpen</p>
-          <h2 class="section__title" data-reveal>Hi, I'm Phong Vuoc Tran</h2>
+          <h2 class="section__title" data-reveal>A little about me</h2>
           <p data-reveal>
-            Better known online as <strong>NAIFU ナイフ</strong>, I turned a simple
-            fascination with sharp edges into a full-blown craft. What started as
-            sharpening kitchen knives at home has grown into a passion for restoring
-            rusted, chipped, and forgotten blades back to life.
+            I'm Phong — better known online as <strong>NAIFU ナイフ</strong>. What
+            started as sharpening a single dull kitchen knife at home turned into a real
+            obsession with bringing rusted, chipped, forgotten blades back to life.
           </p>
           <p data-reveal>
-            Every knife tells a story. My job is to listen to that story through the
-            steel — reading the bevel, feeling the burr, and chasing that perfect,
-            hair-splitting edge. I share every step of that process with a growing
-            community on TikTok.
+            I love the quiet focus of it — reading the bevel, feeling the burr, and
+            chasing that perfect, hair-splitting edge. Every step gets filmed and shared
+            with a community that loves a sharp edge as much as I do.
           </p>
           <ul class="about__tags" data-reveal>
             <li>Japanese Whetstones</li>
@@ -98,8 +122,8 @@
   <!-- Journey timeline -->
   <section class="section journey" id="journey">
     <div class="section__inner">
-      <p class="section__eyebrow center" data-reveal>My Path</p>
-      <h2 class="section__title center" data-reveal>The Sharpening Journey</h2>
+      <p class="section__eyebrow" data-reveal>My Path</p>
+      <h2 class="section__title" data-reveal>The Sharpening Journey</h2>
       <div class="timeline">
         <div class="timeline__item" data-reveal>
           <div class="timeline__dot"></div>
@@ -144,8 +168,8 @@
   <!-- The Craft -->
   <section class="section craft" id="craft">
     <div class="section__inner">
-      <p class="section__eyebrow center" data-reveal>What I Do</p>
-      <h2 class="section__title center" data-reveal>The Craft Behind the Edge</h2>
+      <p class="section__eyebrow" data-reveal>What I Do</p>
+      <h2 class="section__title" data-reveal>The Craft Behind the Edge</h2>
       <div class="craft__grid">
         <article class="craft__card" data-reveal>
           <div class="craft__icon">刀</div>
@@ -178,9 +202,9 @@
   <!-- TikTok content -->
   <section class="section content" id="content">
     <div class="section__inner">
-      <p class="section__eyebrow center" data-reveal>On TikTok</p>
-      <h2 class="section__title center" data-reveal>Watch the Magic Happen</h2>
-      <p class="content__lead center" data-reveal>
+      <p class="section__eyebrow" data-reveal>On TikTok</p>
+      <h2 class="section__title" data-reveal>Watch the Magic Happen</h2>
+      <p class="content__lead" data-reveal>
         As a knife sharpening content creator, I post oddly satisfying restorations,
         before-and-afters, and edge tests. Here's what you'll find on my feed.
       </p>
@@ -206,9 +230,9 @@
   <!-- Contact -->
   <section class="section contact" id="contact">
     <div class="section__inner contact__inner">
-      <p class="section__eyebrow center" data-reveal>Get In Touch</p>
-      <h2 class="section__title center" data-reveal>Let's Talk Blades</h2>
-      <p class="center" data-reveal>
+      <p class="section__eyebrow" data-reveal>Get In Touch</p>
+      <h2 class="section__title" data-reveal>Let's Talk Blades</h2>
+      <p data-reveal>
         Want your knives restored, a collab, or just to say hi? Reach out.
       </p>
       <div class="contact__links" data-reveal>

@@ -10,15 +10,13 @@ known online as **NAIFU ナイフ**. Built as a fast, responsive, dependency-fre
 | `index.html` | Page markup and content |
 | `styles.css` | Styling (dark Japanese-blade theme, responsive) |
 | `script.js` | Scroll reveals, animated stats, mobile menu |
-| `photo.jpg` | Your portrait (add this file — see below) |
+| `image/photo.JPG` | Your portrait shown in the About section |
 
-## Add your photo
+## Change your photo
 
-Drop a photo named **`photo.jpg`** into this folder. It automatically appears in the
-About section. If the file is missing, a kanji placeholder is shown instead.
-
-To use a different filename, update the `src` in the `<img class="about__img">` tag in
-`index.html`.
+Replace `image/photo.JPG` with your own image, or update the `src` in the
+`<img class="about__img">` tag in `index.html`. Filenames are case-sensitive on GitHub
+Pages, so match the exact casing. If the file is missing, a kanji placeholder is shown.
 
 ## Links used
 

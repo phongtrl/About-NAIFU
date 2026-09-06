@@ -1,5 +1,27 @@
 // NAIFU ナイフ — biography page interactions
 
+// Intro counter loader (000 → 100), then reveal the page
+const loader = document.getElementById("loader");
+const loaderCount = document.getElementById("loaderCount");
+if (loader && loaderCount) {
+  document.body.style.overflow = "hidden";
+  const duration = 1500;
+  const start = performance.now();
+  const tick = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    loaderCount.textContent = String(Math.floor(eased * 100)).padStart(3, "0");
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      loader.classList.add("done");
+      document.body.style.overflow = "";
+      setTimeout(() => loader.remove(), 900);
+    }
+  };
+  requestAnimationFrame(tick);
+}
+
 // Sticky nav background on scroll
 const nav = document.getElementById("nav");
 const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
