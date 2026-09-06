@@ -1,0 +1,69 @@
+// NAIFU ナイフ — biography page interactions
+
+// Sticky nav background on scroll
+const nav = document.getElementById("nav");
+const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+// Mobile menu toggle
+const toggle = document.getElementById("navToggle");
+const links = document.querySelector(".nav__links");
+toggle.addEventListener("click", () => {
+  const open = links.classList.toggle("open");
+  toggle.classList.toggle("open", open);
+});
+links.querySelectorAll("a").forEach((link) =>
+  link.addEventListener("click", () => {
+    links.classList.remove("open");
+    toggle.classList.remove("open");
+  })
+);
+
+// Reveal-on-scroll animation
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+document.querySelectorAll("[data-reveal]").forEach((el, i) => {
+  el.style.transitionDelay = `${Math.min(i % 4, 3) * 0.08}s`;
+  revealObserver.observe(el);
+});
+
+// Animated stat counters
+const animateCount = (el) => {
+  const target = parseInt(el.dataset.count, 10);
+  const duration = 1600;
+  const start = performance.now();
+  const step = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target).toLocaleString();
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target.toLocaleString() + "+";
+  };
+  requestAnimationFrame(step);
+};
+
+const statObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        statObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+document.querySelectorAll(".stat__num").forEach((el) => statObserver.observe(el));
+
+// Current year in footer
+document.getElementById("year").textContent = new Date().getFullYear();
