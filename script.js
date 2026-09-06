@@ -87,5 +87,41 @@ const statObserver = new IntersectionObserver(
 );
 document.querySelectorAll(".stat__num").forEach((el) => statObserver.observe(el));
 
+// Video slider (2 videos per slide)
+const videoTrack = document.getElementById("videoTrack");
+if (videoTrack) {
+  const slides = videoTrack.querySelectorAll(".slider__slide");
+  const prevBtn = document.getElementById("videoPrev");
+  const nextBtn = document.getElementById("videoNext");
+  const dotsWrap = document.getElementById("videoDots");
+  let index = 0;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.className = "slider__dot";
+    dot.type = "button";
+    dot.setAttribute("role", "tab");
+    dot.setAttribute("aria-label", `Go to video slide ${i + 1}`);
+    dot.addEventListener("click", () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = dotsWrap.querySelectorAll(".slider__dot");
+
+  const update = () => {
+    videoTrack.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === slides.length - 1;
+  };
+  const goTo = (i) => {
+    index = Math.max(0, Math.min(i, slides.length - 1));
+    update();
+  };
+
+  prevBtn.addEventListener("click", () => goTo(index - 1));
+  nextBtn.addEventListener("click", () => goTo(index + 1));
+  update();
+}
+
 // Current year in footer
 document.getElementById("year").textContent = new Date().getFullYear();

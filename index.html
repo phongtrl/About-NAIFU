@@ -13,8 +13,19 @@
 <body>
   <!-- Intro counter (inspired by editorial loaders) -->
   <div class="loader" id="loader">
+    <div class="loader__stage">
+      <div class="spinner" role="img" aria-label="Loading">
+        <svg class="spinner__svg" viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring ring--track" cx="60" cy="60" r="52" />
+          <circle class="ring ring--enso" cx="60" cy="60" r="52" />
+          <circle class="ring ring--inner" cx="60" cy="60" r="40" />
+          <circle class="ring ring--dot" cx="60" cy="60" r="52" />
+        </svg>
+        <span class="spinner__kanji">研</span>
+      </div>
+    </div>
     <div class="loader__row">
-      <span class="loader__label">NAIFU &mdash; ナイフ</span>
+      <span class="loader__label">Sharpening the edge &mdash; ホネスキ</span>
       <span class="loader__count" id="loaderCount">000</span>
     </div>
   </div>
@@ -48,8 +59,9 @@
           NAIFU
         </h1>
         <p class="hero__subtitle" data-reveal>
-          Hi, I'm <strong>Phong Vuoc Tran</strong>. I bring forgotten, rusted blades
-          back to a mirror edge — and share every spark of it with you on TikTok.
+          Hi, I'm <strong>Phong Vuoc Tran</strong>. From childhood experiments with any
+          "stoney" rock I could find, to running my own sharpening company — I bring
+          forgotten, rusted blades back to a mirror edge and share it all on TikTok.
         </p>
         <div class="hero__cta" data-reveal>
           <a href="#journey" class="btn btn--primary">My Journey</a>
@@ -58,7 +70,7 @@
         <div class="hero__stats" data-reveal>
           <div class="stat"><span class="stat__num" data-count="10000">0</span><span class="stat__label">Blades Restored</span></div>
           <div class="stat"><span class="stat__num" data-count="1000">0</span><span class="stat__label">Satisfied Customers</span></div>
-          <div class="stat"><span class="stat__num" data-count="7">0</span><span class="stat__label">Years of Experience</span></div>
+          <div class="stat"><span class="stat__num" data-count="5">0</span><span class="stat__label">Years Sharpening Professionally</span></div>
         </div>
       </div>
       <div class="hero__portrait" data-reveal>
@@ -90,23 +102,29 @@
           <p class="about__sign">— Phong, <span>NAIFU ナイフ</span></p>
           <ul class="about__facts">
             <li><span>Alias</span> NAIFU ナイフ</li>
-            <li><span>Craft</span> Sharpening &amp; restoration</li>
-            <li><span>Sharpening since</span> 2019</li>
-            <li><span>Find me</span> TikTok @knifesharpening</li>
+            <li><span>First stone</span> 2019</li>
+            <li><span>Sharpened pro</span> 2020–2025</li>
+            <li><span>Now</span> Engineer &amp; creator</li>
           </ul>
         </aside>
         <div class="about__text">
           <p class="section__eyebrow" data-reveal>研ぐ &middot; To Sharpen</p>
           <h2 class="section__title" data-reveal>A little about me</h2>
           <p data-reveal>
-            I'm Phong — better known online as <strong>NAIFU ナイフ</strong>. What
-            started as sharpening a single dull kitchen knife at home turned into a real
-            obsession with bringing rusted, chipped, forgotten blades back to life.
+            I'm Phong — better known online as <strong>NAIFU ナイフ</strong>. Ever since I
+            was a kid I'd grab any rock or "stoney" thing I could find to sharpen my tools.
+            It was never a real success — until 2019, when my first cheap whetstone made
+            everything click and my skills rocketed.
           </p>
           <p data-reveal>
-            I love the quiet focus of it — reading the bevel, feeling the burr, and
-            chasing that perfect, hair-splitting edge. Every step gets filmed and shared
-            with a community that loves a sharp edge as much as I do.
+            By 2020 I turned that obsession into a service for <strong>professional chefs
+            and home cooks</strong>, running my own knife-sharpening company from 2020 to
+            2025 and selling knives and kitchen tools along the way.
+          </p>
+          <p data-reveal>
+            Today I focus on my engineering career — I hold a Master's and Bachelor's in
+            <strong>Geography, Geomatics &amp; Spatial Planning from NTNU Trondheim</strong> — while
+            still sharing the quiet focus of the craft with my community on TikTok.
           </p>
           <ul class="about__tags" data-reveal>
             <li>Japanese Whetstones</li>
@@ -129,36 +147,46 @@
           <div class="timeline__dot"></div>
           <div class="timeline__card">
             <span class="timeline__step">01</span>
-            <h3>The First Edge</h3>
-            <p>It began with one dull kitchen knife and a cheap whetstone. That first
-              time paper sliced clean, I was hooked for life.</p>
+            <h3>Sharpening on Rocks</h3>
+            <p>As a kid I'd grab any rock or "stoney" thing I could find to sharpen my
+              tools. It never really worked — but the fascination never left me.</p>
           </div>
         </div>
         <div class="timeline__item" data-reveal>
           <div class="timeline__dot"></div>
           <div class="timeline__card">
             <span class="timeline__step">02</span>
-            <h3>Learning the Craft</h3>
-            <p>Countless hours studying angles, grits, and Japanese sharpening
-              traditions. Failure after failure taught me the feel of true steel.</p>
+            <h3>The First Real Stone · 2019</h3>
+            <p>I bought my first cheap whetstone. Between 2019 and 2020 my skills
+              rocketed and, for the first time, everything finally clicked.</p>
           </div>
         </div>
         <div class="timeline__item" data-reveal>
           <div class="timeline__dot"></div>
           <div class="timeline__card">
             <span class="timeline__step">03</span>
-            <h3>Becoming NAIFU ナイフ</h3>
-            <p>I gave my craft a name and a face — NAIFU, the Japanese word for
-              "knife" — and started sharing restorations with the world.</p>
+            <h3>Going Professional · 2020</h3>
+            <p>I turned the craft into a service for professional chefs and home cooks,
+              and founded my own knife-sharpening company.</p>
           </div>
         </div>
         <div class="timeline__item" data-reveal>
           <div class="timeline__dot"></div>
           <div class="timeline__card">
             <span class="timeline__step">04</span>
-            <h3>Building a Community</h3>
-            <p>From satisfying restorations to sharpening tips, my TikTok became a
-              home for anyone who loves a razor-sharp edge.</p>
+            <h3>Selling Knives &amp; Tools · 2021–22</h3>
+            <p>I expanded beyond sharpening and began selling knives and kitchen tools
+              to a growing base of loyal customers.</p>
+          </div>
+        </div>
+        <div class="timeline__item" data-reveal>
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <span class="timeline__step">05</span>
+            <h3>A New Edge · 2025</h3>
+            <p>After five years running the company, I chose to fully focus on my
+              engineering career — an MSc &amp; BSc in Geography, Geomatics &amp; Spatial Planning from
+              NTNU Trondheim — while still sharing my passion on TikTok.</p>
           </div>
         </div>
       </div>
@@ -206,18 +234,82 @@
       <h2 class="section__title" data-reveal>Watch the Magic Happen</h2>
       <p class="content__lead" data-reveal>
         As a knife sharpening content creator, I post oddly satisfying restorations,
-        before-and-afters, and edge tests. Here's what you'll find on my feed.
+        before-and-afters, and edge tests. Here are my most-watched videos.
       </p>
-      <div class="content__embed" data-reveal>
-        <blockquote class="tiktok-embed"
-          cite="https://www.tiktok.com/@knifesharpening/video/7659410911882611991"
-          data-video-id="7659410911882611991"
-          style="max-width: 605px; min-width: 325px;">
-          <section>
-            <a target="_blank" rel="noopener" title="@knifesharpening"
-              href="https://www.tiktok.com/@knifesharpening">@knifesharpening</a>
-          </section>
-        </blockquote>
+      <div class="content__slider" data-reveal>
+        <div class="slider__viewport">
+          <div class="slider__track" id="videoTrack">
+            <div class="slider__slide">
+              <figure class="video">
+                <blockquote class="tiktok-embed"
+                  cite="https://www.tiktok.com/@knifesharpening/video/7532986881097665814"
+                  data-video-id="7532986881097665814"
+                  style="max-width: 605px; min-width: 288px;">
+                  <section>
+                    <a target="_blank" rel="noopener" title="@knifesharpening"
+                      href="https://www.tiktok.com/@knifesharpening">@knifesharpening</a>
+                  </section>
+                </blockquote>
+                <figcaption class="video__cap"><span class="video__views">611K views</span> The best Japanese 1000-grit stone</figcaption>
+              </figure>
+              <figure class="video">
+                <blockquote class="tiktok-embed"
+                  cite="https://www.tiktok.com/@knifesharpening/video/7451333444321266966"
+                  data-video-id="7451333444321266966"
+                  style="max-width: 605px; min-width: 288px;">
+                  <section>
+                    <a target="_blank" rel="noopener" title="@knifesharpening"
+                      href="https://www.tiktok.com/@knifesharpening">@knifesharpening</a>
+                  </section>
+                </blockquote>
+                <figcaption class="video__cap"><span class="video__views">514K views</span> Pro tip: finish with edge leading</figcaption>
+              </figure>
+            </div>
+            <div class="slider__slide">
+              <figure class="video">
+                <blockquote class="tiktok-embed"
+                  cite="https://www.tiktok.com/@knifesharpening/video/7493303446985051414"
+                  data-video-id="7493303446985051414"
+                  style="max-width: 605px; min-width: 288px;">
+                  <section>
+                    <a target="_blank" rel="noopener" title="@knifesharpening"
+                      href="https://www.tiktok.com/@knifesharpening">@knifesharpening</a>
+                  </section>
+                </blockquote>
+                <figcaption class="video__cap"><span class="video__views">473K views</span> Japanese &amp; Norwegian natural stones</figcaption>
+              </figure>
+              <figure class="video">
+                <blockquote class="tiktok-embed"
+                  cite="https://www.tiktok.com/@knifesharpening/video/7555513190927404310"
+                  data-video-id="7555513190927404310"
+                  style="max-width: 605px; min-width: 288px;">
+                  <section>
+                    <a target="_blank" rel="noopener" title="@knifesharpening"
+                      href="https://www.tiktok.com/@knifesharpening">@knifesharpening</a>
+                  </section>
+                </blockquote>
+                <figcaption class="video__cap"><span class="video__views">459K views</span> Cheap IKEA knife, worth sharpening</figcaption>
+              </figure>
+            </div>
+            <div class="slider__slide">
+              <figure class="video">
+                <blockquote class="tiktok-embed"
+                  cite="https://www.tiktok.com/@knifesharpening/video/7613099766884453635"
+                  data-video-id="7613099766884453635"
+                  style="max-width: 605px; min-width: 288px;">
+                  <section>
+                    <a target="_blank" rel="noopener" title="@knifesharpening"
+                      href="https://www.tiktok.com/@knifesharpening">@knifesharpening</a>
+                  </section>
+                </blockquote>
+                <figcaption class="video__cap"><span class="video__views">109K views</span> How to sharpen like a professional</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <button class="slider__btn slider__btn--prev" id="videoPrev" type="button" aria-label="Previous videos">&lsaquo;</button>
+        <button class="slider__btn slider__btn--next" id="videoNext" type="button" aria-label="Next videos">&rsaquo;</button>
+        <div class="slider__dots" id="videoDots" role="tablist" aria-label="Video slides"></div>
       </div>
       <div class="content__cta" data-reveal>
         <a href="https://www.tiktok.com/@knifesharpening" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
@@ -236,8 +328,18 @@
         Want your knives restored, a collab, or just to say hi? Reach out.
       </p>
       <div class="contact__links" data-reveal>
+        <a href="mailto:Naifuco@gmail.com" class="social">Email</a>
         <a href="https://www.tiktok.com/@knifesharpening" target="_blank" rel="noopener" class="social">TikTok</a>
         <a href="https://www.instagram.com/knifesharpener__/" target="_blank" rel="noopener" class="social">Instagram</a>
+      </div>
+      <div class="partner" data-reveal>
+        <p class="partner__eyebrow">Partner &amp; Discount</p>
+        <p class="partner__text">
+          Proud partner of
+          <a href="https://www.skarpekniver.com" target="_blank" rel="noopener">skarpekniver.com</a>.
+          Use code <span class="partner__code">NAIFU10</span> for <strong>10% off</strong> your order.
+        </p>
+        <p class="partner__note">Discount does not apply to Takeda and Shibata knives.</p>
       </div>
     </div>
   </section>
@@ -249,5 +351,13 @@
 
   <script async src="https://www.tiktok.com/embed.js"></script>
   <script src="script.js"></script>
+  <!-- Loads the in-page editor only when the URL ends with ?edit or #edit -->
+  <script>
+    if (location.search.indexOf("edit") > -1 || location.hash === "#edit") {
+      var s = document.createElement("script");
+      s.src = "editor.js";
+      document.body.appendChild(s);
+    }
+  </script>
 </body>
 </html>
